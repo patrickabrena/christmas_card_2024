@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas, I Love You</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+         @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.5); /* Start smaller */
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .content > * {
+            opacity: 0; /* Initially hidden */
+            transform: scale(0.5); /* Start smaller */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+        }
+        .content > *.visible {
+            animation: appear 0.6s ease forwards; /* Show when visible */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas">Canvas not supported.</canvas>
+    <div class="overlay">
+        <section class="hero">
+            <h1 style="font-size: 3rem;">Merry Christmas, I Love You</h1>
+            <h2 style="font-size: 1.5rem;">(Scroll to see why I love you so much!)</h2>
+        </section>
+
+        
+
+        <section class="content">
+            <h1>1. You Are Forgiving</h1>
+            <p>Throughout all my blunders you have been understanding and been willing to communicate even when I am being so stubborn! That leads me to my next reason</p>
+            <h1>2. You Are So Patient </h1>
+            <p>The 4+ years we've spent together, you've ALWAYS been so patient and have waited and given me time to process things while we have conversations as well as you just being patient when I'm being an annoying little baby sometimes hehe</p>
+            <h1>3. You're A Creative! </h1>
+            <p>I love that you have so many little cute projects that you make! From your paintings to your smol inanimate babies that you craft, all of them have so much personality and I want to keep all of them</p>
+            <h1>4. You Believe In Us</h1>
+            <p>You put so much work into our relationship and making sure we're doing the necessary steps to make sure we're health babies and I want to keep trying too because I believe in us too!</p>
+            <h1>5. You're So COOL!!</h1>
+            <p>I'm so grateful that you've exposed me to all the media you like because now I LOVE cowboy bep and twin peaks (season 1 & 2). I'm so excited to keep watching new shows and movies with you because you have such cool taste</p>
+            <h1>6. You're A Rockstar!</h1>
+            <p>I love the free concerts that I get when I'm driving and also I love hearing you practice the Uke and sing because you're so talented you knowww</p>
+            <h1>7. You Love A Sweet Ping!!!</h1>
+            <p>If there's anything that I know about you at all, it's that you love a sweet pingy!! I love that you even after I make a good pood and you're so full you still have room for a sweet ping! and you're willing to share them too</p>
+            <h1>8. You Lub Bideo Games!!!</h1>
+            <p>Playing games is such a huge part of my identity and I love that I found someone who loves playing baby goms as much as I do! I'm so exited for all the future mods I'm going to do for the both of us! I just want to say home and be cumby and play games together forever!!!</p>
+            <h1>9. You Are So Soft!!!</h1>
+            <p>It's crazy how soft you are!! Like a baby shark! I love that we get to cuddle and I get to hold the belly and smoob it! You are so soft inside and outside and I'm suber lucky I found someone just as soft as me!</p>
+            <h1>10. We Are Attached By The String</h1>
+            <p>I love that we can just float in space together like space babies that we are and can just check in every so often with a thumbs up. I love you so very mut and I'm so habby to be doing this life journey with you</p>
+        </section>
+    </div>
+    <script src="glitter_effect.js"></script>
+    <script>
+        // JavaScript for scroll animations
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible"); // Show when in viewport
+                    } else {
+                        entry.target.classList.remove("visible"); // Hide when out of viewport
+                    }
+                });
+            },
+            {
+                threshold: 0.5, // Trigger when 10% of the element is visible
+            }
+        );
+
+        document.querySelectorAll(".content > *").forEach((el) => observer.observe(el));
+    </script>
+    
+</body>
+
+</html>
